@@ -1,0 +1,243 @@
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+
+nav a .navbar-brand {
+  color: #00bfff !important;
+}
+navbar-nav:hover {
+  color: #00bfff !important;
+}
+
+.nav-link:hover {
+  color: #00bfff !important;
+}
+
+.btn-login {
+  margin-left: 68% !important;
+  background-color: #00bfff !important;
+  color: white !important;
+}
+
+.nav-item {
+  padding: 0 10px 0 10px !important;
+}
+
+/* jumbotron */
+.jumbotron {
+  text-align: justify;
+  background-image: url(../img/background-1.png);
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+.jumbotron .container {
+  position: relative;
+  z-index: 1;
+}
+
+.jumbotron::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(to top, rgba(0, 0, 01), rgba(0, 0, 0, 0)); */
+  position: absolute;
+  bottom: 0;
+}
+
+.jumbotron .display-4 {
+  color: black;
+  padding-top: 150px;
+  /* margin-top: 75px; */
+  font-weight: 400px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-family: Stuart, Georgia, serif;
+}
+
+.jumbotron .display-4 span {
+  font-weight: 500;
+}
+
+.jumbotron .btn-1 {
+  color: white !important;
+  background-color: #00bfff !important;
+}
+
+.card-body p {
+  color: #fff;
+}
+/* isi */
+
+/* isi 2 */
+/* Portofolio */
+#portofolio {
+  padding: 50px 0;
+}
+#portofolio .sub-title {
+  font-family: "Stuart, Georgia, serif";
+}
+
+.items-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px !important;
+  margin-top: 50px;
+}
+
+.items {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.items img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer1 {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #00bfff);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  transition: height 0.5s;
+}
+
+.layer1 p {
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.layer1 a {
+  margin-top: 20px;
+  background-color: white;
+  color: black;
+  transition: border 0.5s;
+  transition: background 0.5s !important;
+}
+
+.layer1 a:hover {
+  border: 3px solid black;
+  background-color: white;
+  color: black;
+  transition: background 0.5s !important;
+}
+
+.items:hover img {
+  transform: scale(1.1);
+}
+
+.items:hover .layer1 {
+  height: 100%;
+}
+
+/* barang */
+.card-body {
+  background-color: #00bfff;
+  text-align: center;
+}
+
+.card-title a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.card-title a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.container .tombol {
+  border-top: 1px solid #dcd6cb;
+  border-bottom: 1px solid #dcd6cb;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  margin: 1.6rem 0 0;
+  padding: 1.6rem 0;
+  font-family: Stuart, Georgia, serif;
+}
+
+.tombol p {
+  margin: 0 32px;
+  font-family: Graphik, Helvetica Neue, sans-serif;
+  display: block;
+}
+
+.tombol .btn {
+  background-color: #00bfff;
+  color: #fff;
+}
+
+.tombol .btn:hover {
+  color: #00bfff;
+  background-color: #fff;
+  border: 1px solid #00bfff;
+}
+
+/* responsive */
+@media screen and (max-width: 990px) {
+  .jumbotron {
+    background: url(../img/background-2.png) !important;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .btn-login {
+    margin-left: 4% !important;
+    margin-top: 20px !important;
+  }
+
+  .nav-a {
+    margin-left: 0 !important;
+  }
+  .hp {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .gambar {
+    flex-direction: column;
+  }
+  .gambar li {
+    margin-bottom: 30px;
+    margin-right: 50px;
+  }
+  .gambar li img {
+    width: 80px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron .hp {
+    background: url(../img/background-2.png) !important;
+    width: 100vw;
+    height: 100vh;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
