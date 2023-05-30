@@ -194,6 +194,36 @@ navbar-nav:hover {
   border: 1px solid #00bfff;
 }
 
+/* footer */
+.footer {
+  padding: 10px;
+  padding-top: 25px;
+  box-shadow: 0 0 2px grey;
+}
+
+.supported {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.medsos-footer p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.icon-medsos i {
+  margin-right: 25px;
+  font-size: 30px;
+}
+
+.copyright {
+  font-size: 15px;
+}
+
+.footer span {
+  color: black;
+}
+
 /* responsive */
 @media screen and (max-width: 990px) {
   .jumbotron {
