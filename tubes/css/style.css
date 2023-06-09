@@ -1,0 +1,141 @@
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+.warna1 {
+  background-color: #00bfff !important;
+}
+.warna1-2 {
+  color: #00bfff !important;
+}
+
+.warna2 {
+  background-color: #efefef;
+}
+
+.warna3 {
+  background-color: #f29e23;
+}
+
+.telusuri:hover {
+  background-color: #00bfff;
+}
+.banner {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/background-1.png");
+  background-size: cover;
+  position: relative;
+}
+
+/* list kategori */
+#portofolio {
+  padding: 50px 0;
+}
+
+.items-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px !important;
+  margin-top: 50px;
+}
+
+.items {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.items img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer1 {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #00bfff);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  transition: height 0.5s;
+}
+
+.layer1 p {
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.items:hover img {
+  transform: scale(1.1);
+}
+
+.items:hover .layer1 {
+  height: 100%;
+}
+
+/* tentang */
+.tentang {
+  background-color: #efefef;
+}
+/* produk */
+
+.image-box {
+  height: 250px;
+}
+
+.image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* footer */
+.footer {
+  padding: 10px;
+  padding-top: 25px;
+  box-shadow: 0 0 2px grey;
+}
+
+.supported {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.medsos-footer p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* .icon-medsos i {
+margin-right: 25px !important;
+font-size: 30px !important;
+} */
+
+.copyright {
+  font-size: 15px;
+}
+
+.footer span {
+  color: black;
+}
+
+/* web produk */
+.banner-produk {
+  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/background-1.png");
+  background-size: cover;
+  position: relative;
+}
