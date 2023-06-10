@@ -1,5 +1,27 @@
 <?php
+require "koneksi.php";
 
+$id = $_GET["id"];
+
+// Validasi id
+if (!is_numeric($id)) {
+    echo "ID produk tidak valid.";
+    exit;
+}
+
+$queryKategori = mysqli_query($con, "SELECT * FROM kategori");
+$tampil = mysqli_query($con, "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.id as id_produk
+    FROM produk p
+    JOIN kategori k ON p.kategori_id = k.id 
+    WHERE p.ketersediaan_stok = 'tersedia' AND p.id = '$id'");
+
+// Periksa hasil query
+if (mysqli_num_rows($tampil) > 0) {
+    $result = mysqli_fetch_assoc($tampil);
+} else {
+    echo "Data tidak ditemukan.";
+    exit;
+}
 
 ?>
 
@@ -28,10 +50,64 @@
 </head>
 
 <body>
-    <?php require "partials/navbar.php" ?>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg border-bottom border-1 border-secondary bg-body-tertiary ">
+        <div class="container-fluid d-flex">
+            <a class="navbar-brand ps-4 pe-4" href="#">
+                <img src="img/logo-1.png" alt="Bootstrap" width="50" height="50" /><span class="ps-2" style="color: #00bfff !important">Always </span> <span style="color: #f29e23 !important">Healthy</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produk.php">Produk</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="login-register-logout/logout.php" class="btn btn-danger">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-
-
+    <!-- detail produk -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <?php if (isset($result)) : ?>
+                    <div class="col-md-5">
+                        <img src="img/<?= $result['foto']; ?>" class="w-100" alt="">
+                    </div>
+                    <div class="col-md-6 offset-md-1">
+                        <h1><?= $result['nama_brg']; ?></h1>
+                        <p class="fs-5">
+                            <?= $result['detail']; ?>
+                        </p>
+                        <p class="fs-5">
+                            <strong>Rp. <?= $result['harga']; ?></strong>
+                        </p>
+                        <p>
+                            Status Ketersediaan : <strong><?= $result['ketersediaan_stok']; ?></strong>
+                        </p>
+                    </div>
+                <?php else : ?>
+                    <div class="col-md-12">
+                        <p>Data tidak ditemukan.</p>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
 
 
     <!-- footer -->

@@ -17,8 +17,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="produk.php">Produk</a>
                 </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="">Logout</a>
+                </li> -->
+            </ul>
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../login-register-logout/logout.php">Logout</a>
+                    <a href="../login-register-logout/logout.php" class="btn btn-danger">Logout</a>
                 </li>
             </ul>
         </div>

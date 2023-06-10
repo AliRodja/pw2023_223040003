@@ -189,40 +189,43 @@ function uploadImage()
                         <label for="foto">Foto</label>
                         <input type="file" name="foto" id="foto" onchange="previewImage(event)" class="form-control">
                     </div>
-                    <div>
-                        <label for="nama">Nama</label>
-                        <input type="text" id="nama" name="nama" class="form-control" value="<?= $tampil['nama_brg']; ?>" autocomplete="off" required>
-                    </div>
-                    <div>
-                        <label for="kategori_id">Kategori</label>
-                        <input type="text" name="kategori_id" id="kategori_id" class="form-control" value="<?= $tampil['nama_kategori']; ?>">
-                        <select name="kategori_id" id="kategori_id" class="form-control" required>
-                            <option value="1">PROMO</option>
-                            <option value="2">OBAT LANGKA</option>
-                            <option value="3">OBAT GENERIK</option>
-                            <option value="4">IBU & ANAK</option>
-                            <option value="5">SUPLEMEN</option>
-                            <option value="6">PERAWATAN TUBUH</option>
-                            <option value="7">HERBAL</option>
-                            <option value="8">ALAT KESEHATAN</option>
-                            <option value="9">KESEHATAN PRIA</option>
-                            <option value="10">KESEHATAN WANITA</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="harga">Harga</label>
-                        <input type="number" class="form-control" name="harga" value="<?= $tampil['harga']; ?>" required>
-                    </div>
-                    <div>
-                        <label for="detail">Detail</label>
-                        <textarea name="detail" id="detail" class="form-control"><?= $tampil['detail']; ?></textarea>
-                    </div>
-                    <div>
-                        <label for="ketersediaan_stok">Ketersediaan Stok</label>
-                        <select name="ketersediaan_stok" id="ketersediaan_stok" class="form-control">
-                            <option value="tersedia" <?php if ($tampil['ketersediaan_stok'] == 'tersedia') echo 'selected'; ?>>Tersedia</option>
-                            <option value="habis" <?php if ($tampil['ketersediaan_stok'] == 'habis') echo 'selected'; ?>>Habis</option>
-                        </select>
+                    <div class="py-3">
+                        <div>
+                            <label for="nama">Nama</label>
+                            <input type="text" id="nama" name="nama" class="form-control" value="<?= $tampil['nama_brg']; ?>" autocomplete="off" required>
+                        </div>
+
+                        <div class="py-3">
+                            <label for="kategori_id">Kategori</label>
+                            <input type="text" name="kategori_id" id="kategori_id" class="form-control py-3" value="<?= $tampil['nama_kategori']; ?>">
+                            <select name="kategori_id" id="kategori_id" class="form-control" required>
+                                <option value="1">PROMO</option>
+                                <option value="2">OBAT LANGKA</option>
+                                <option value="3">OBAT GENERIK</option>
+                                <option value="4">IBU & ANAK</option>
+                                <option value="5">SUPLEMEN</option>
+                                <option value="6">PERAWATAN TUBUH</option>
+                                <option value="7">HERBAL</option>
+                                <option value="8">ALAT KESEHATAN</option>
+                                <option value="9">KESEHATAN PRIA</option>
+                                <option value="10">KESEHATAN WANITA</option>
+                            </select>
+                        </div>
+                        <div class="py-3">
+                            <label for="harga">Harga</label>
+                            <input type="number" class="form-control" name="harga" value="<?= $tampil['harga']; ?>" required>
+                        </div>
+                        <div>
+                            <label for="detail">Detail</label>
+                            <textarea name="detail" id="detail" class="form-control" cols="20" rows="6"><?= $tampil['detail']; ?></textarea>
+                        </div>
+                        <div class="py-3">
+                            <label for="ketersediaan_stok">Ketersediaan Stok</label>
+                            <select name="ketersediaan_stok" id="ketersediaan_stok" class="form-control">
+                                <option value="tersedia" <?php if ($tampil['ketersediaan_stok'] == 'tersedia') echo 'selected'; ?>>Tersedia</option>
+                                <option value="habis" <?php if ($tampil['ketersediaan_stok'] == 'habis') echo 'selected'; ?>>Habis</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="d-flex justify-content-around mt-3">
                         <button type="submit" class="btn btn-primary" name="submit">Simpan</button>

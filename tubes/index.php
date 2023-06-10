@@ -1,11 +1,22 @@
 <?php
 require "partials/session-user.php";
 require "koneksi.php";
-
 $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
-$tampil = mysqli_query($con, "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.id as id_produk
-FROM produk p
-JOIN kategori k ON p.kategori_id = k.id WHERE ketersediaan_stok = 'tersedia'");
+$tampil = mysqli_query($con, "SELECT p.*, k.*, k.nama AS nama_kategori, p.nama AS nama_brg, p.id AS id_produk
+                              FROM produk p
+                              JOIN kategori k ON p.kategori_id = k.id
+                              WHERE ketersediaan_stok = 'tersedia'");
+
+$data_produk = [];
+while ($row = mysqli_fetch_assoc($tampil)) {
+    $data_produk[] = $row;
+}
+$data_kategori = [];
+while ($row = mysqli_fetch_assoc($queryKategori)) {
+    $data_kategori[] = $row;
+}
+
+
 
 
 ?>
@@ -91,13 +102,13 @@ JOIN kategori k ON p.kategori_id = k.id WHERE ketersediaan_stok = 'tersedia'");
 
 
     <!-- produk -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="produk">
         <div class="container text-center ">
 
             <h3>Produk</h3>
 
             <div class="row mt-5">
-                <?php foreach ($tampil as $t) : ?>
+                <?php foreach ($data_produk as $t) : ?>
                     <div class="col-sm-6 col-md-4 mb-3">
                         <div class="card h-100">
                             <div class="image-box">
@@ -105,16 +116,12 @@ JOIN kategori k ON p.kategori_id = k.id WHERE ketersediaan_stok = 'tersedia'");
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title mt-3"><?= $t['nama_brg'] ?></h4>
-
                                 <p style="color:red;"><?= $t['nama_kategori']; ?></p>
-
                                 <p class="card-text text-truncate " style="font-size: 15px ;"><?= $t['detail'] ?></p>
-
-
                                 <div class="card-fasilitas py-3">
                                     <h4>Rp. <?= $t['harga'] ?>/-</h4>
                                     <div class="py-3">
-                                        <a href="produk-detail.php?nama=<?php $t['nama']; ?>" class="btn warna1 text-white telusuri   ">Lihat Details</a>
+                                        <a href="produk-detail.php?id=<?= $t['id_produk']; ?>" class="btn warna1 text-white telusuri">Lihat Details</a>
                                     </div>
                                 </div>
                             </div>
