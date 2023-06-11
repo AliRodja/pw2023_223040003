@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
     <!-- banner -->
     <div class="container-fluid banner d-flex align-items-center">
         <div class="container text-center text-light">
-            <h1>Melengkapi Solusi Kesehatan</h1>
+            <h1>Melengkapi Solusi Kesehatan Anda</h1>
             <h3>Mau Cari Apa?</h3>
             <div class="col-md-8 offset-md-2">
                 <form method="get" action="produk.php">
@@ -95,7 +95,10 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
     <div class="container-fluid  py-5 tentang" id="tentang">
         <div class="container text-center">
             <h3>Tentang Kami</h3>
-            <p class="fs-7 mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat recusandae quia neque magni error cupiditate hic? Error dolores vitae nulla reprehenderit, quaerat beatae soluta nostrum cum pariatur eligendi laudantium blanditiis ipsam fugiat sit fugit odit cumque animi, natus, vero tempore! Dolorem tenetur asperiores voluptate iure explicabo nisi harum natus dolores atque cumque molestias provident sequi laborum autem odio deleniti ratione, officiis quasi ipsa? Consequatur totam minus aliquid nisi quibusdam natus veniam aut cupiditate officia ex harum exercitationem molestias hic, sit facilis vero! Necessitatibus officiis minima architecto. Quo dolorem, facere ea ab corrupti fugiat itaque! Ratione enim nihil hic. Voluptatem, sint.</p>
+            <p class="fs-7 mt-5">Always Healthy adalah sebuah situs web jual obat yang didedikasikan untuk menyediakan akses mudah dan aman bagi pengguna yang ingin membeli obat-obatan secara online. Dengan fokus pada kesehatan dan kesejahteraan, Always Healthy menawarkan berbagai macam obat-obatan dari berbagai kategori, mulai dari obat resep hingga obat bebas yang umum digunakan.
+                <br>
+                Web Always Healthy memiliki antarmuka yang intuitif dan mudah digunakan, memungkinkan pengguna untuk dengan cepat mencari dan menemukan produk yang mereka butuhkan. Di dalam situs, pengguna dapat menemukan deskripsi lengkap tentang setiap obat, termasuk informasi dosis, petunjuk penggunaan, efek samping yang mungkin terjadi, dan peringatan penting.
+            </p>
         </div>
     </div>
 

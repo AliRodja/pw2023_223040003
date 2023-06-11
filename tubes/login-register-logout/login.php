@@ -66,7 +66,7 @@ if (isset($_POST['loginbtn'])) {
 
 <body>
     <div class="global-container">
-        <div class="card login-form">
+        <div class="card login-form shadows">
             <div class="card-body">
                 <img src="img/logo-2.png" class="bg" />
                 <h1 class="card-title text-center">L O G I N</h1>

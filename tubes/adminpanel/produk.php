@@ -188,42 +188,54 @@ $jumlah = 0;
 
         <div class="mt-3 print">
             <h2>List Produk</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="" method="get">
+                        <div class="input-group mb-3 my-3">
+                            <input type="search" class="form-control" placeholder="cari produk.." name="keyword" id="keyword" autofocus autocomplete="off">
+                            <button class="btn btn-primary" type="submit" name="search" id="search-button">Search</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
 
             <button class="no-print btn btn-danger" onclick="window.print()"><i class="fa-solid fa-print"></i> Download</button>
-
-            <div class="table-responsive mt-5">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Gambar</th>
-                            <th>Nama</th>
-                            <th>Kategori</th>
-                            <th>Harga</th>
-                            <th>Ketersediaan Stock</th>
-                            <th class="no-print">Aksi</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        foreach ($tampil as $t) :
-                            $jumlah++;
-                        ?>
+            <div id="search-container">
+                <div class="table-responsive mt-5">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td><?php echo $jumlah; ?></td>
-                                <td><img src="../img/<?= $t['foto']; ?>" alt="" class="foto-print"></td>
-                                <td><?php echo $t['nama_brg'] ?></td>
-                                <td><?php echo $t['nama_kategori'] ?></td>
-                                <td><?php echo $t['harga'] ?></td>
-                                <td class="<?php echo ($t['ketersediaan_stok'] == 'tersedia') ? 'text-success' : 'text-danger'; ?>">
-                                    <?php echo $t['ketersediaan_stok']; ?>
-                                </td>
-                                <td class="no-print"><a href="produk-detail.php?id=<?= $t["id_produk"] ?>"><i class="fa-solid fa-gear"></i></a></td>
+                                <th>No.</th>
+                                <th>Gambar</th>
+                                <th>Nama</th>
+                                <th>Kategori</th>
+                                <th>Harga</th>
+                                <th>Ketersediaan Stock</th>
+                                <th class="no-print">Aksi</th>
+
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($tampil as $t) :
+                                $jumlah++;
+                            ?>
+                                <tr>
+                                    <td><?php echo $jumlah; ?></td>
+                                    <td><img src="../img/<?= $t['foto']; ?>" alt="" class="foto-print"></td>
+                                    <td><?php echo $t['nama_brg'] ?></td>
+                                    <td><?php echo $t['nama_kategori'] ?></td>
+                                    <td><?php echo $t['harga'] ?></td>
+                                    <td class="<?php echo ($t['ketersediaan_stok'] == 'tersedia') ? 'text-success' : 'text-danger'; ?>">
+                                        <?php echo $t['ketersediaan_stok']; ?>
+                                    </td>
+                                    <td class="no-print"><a href="produk-detail.php?id=<?= $t["id_produk"] ?>"><i class="fa-solid fa-gear"></i></a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -233,6 +245,7 @@ $jumlah = 0;
     <!-- java -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="../fontawesome/js/all.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
