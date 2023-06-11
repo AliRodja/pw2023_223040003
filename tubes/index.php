@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
     <?php require "partials/navbar.php"; ?>
 
     <!-- banner -->
-    <div class="container-fluid banner d-flex align-items-center">
+    <div class="container-fluid banner d-flex align-items-center" id="home">
         <div class="container text-center text-light">
             <h1>Melengkapi Solusi Kesehatan Anda</h1>
             <h3>Mau Cari Apa?</h3>

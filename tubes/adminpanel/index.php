@@ -5,8 +5,9 @@ require "../koneksi.php";
 $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
 $jumlahKategori = mysqli_num_rows($queryKategori);
 
-$queryProduk = mysqli_query($con, "SELECT * FROM Produk");
+$queryProduk = mysqli_query($con, "SELECT * FROM produk");
 $jumlahProduk = mysqli_num_rows($queryProduk);
+
 
 ?>
 
